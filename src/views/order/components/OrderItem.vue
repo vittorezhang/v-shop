@@ -5,6 +5,7 @@ import { decimalFormat } from '@/utils/format';
 import Price from '@/components/Price/index.vue';
 // store
 import { useOrderStore } from '@/store/modules/order';
+import { makePhoneCall } from '@/utils/web';
 
 defineProps({
   item: { type: Object, default: () => {} },
@@ -25,7 +26,9 @@ function onOrderClicked(item: Recordable) {
 }
 
 function onConcatService(_item: Recordable) {
-  showToast('未开放：客服');
+  makePhoneCall({
+    phoneNumber: '18211588737',
+  });
 }
 
 function onOrderCancel(item: Recordable) {

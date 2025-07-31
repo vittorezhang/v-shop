@@ -71,7 +71,7 @@ function onOrderPay(_orderId: number) {
 
 function onConcatService() {
   makePhoneCall({
-    phoneNumber: '10086', // 模拟打电话
+    phoneNumber: '18211588737',
   });
 }
 
