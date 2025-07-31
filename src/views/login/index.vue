@@ -43,13 +43,14 @@ const submitted = computed(() => {
 });
 
 function onSubmit() {
-  if (!isMobile(unref(mobile))) {
-    showToast('手机号格式错误');
-    return;
-  }
+  // if (!isMobile(unref(mobile))) {
+  //   showToast('手机号格式错误');
+  //   return;
+  // }
 
   const params: Recordable = {
-    mobile: unref(mobile),
+    // mobile: unref(mobile),
+    username: unref(mobile),
     deviceId: getClientInfo().deviceId,
     deviceName: getClientInfo().deviceType,
   };

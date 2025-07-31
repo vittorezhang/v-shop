@@ -66,12 +66,23 @@ export function userMBindMobile(data?: Recordable) {
   });
 }
 
+// /**
+//  * 用户登录[手机号码]
+//  */
+// export function userMLogin(data?: Recordable) {
+//   return request({
+//     url: `/user/m/login`,
+//     method: 'post',
+//     data,
+//   });
+// }
+
 /**
- * 用户登录[手机号码]
+ * 用户登录[账户密码]
  */
 export function userMLogin(data?: Recordable) {
   return request({
-    url: `/user/m/login`,
+    url: `/user/username/login`,
     method: 'post',
     data,
   });

@@ -21,7 +21,8 @@ const router = useRouter();
 const bannerList = ref<Recordable[]>([]);
 
 function getBannerList() {
-  API_BANNER.bannerList({ type: 'indexBanner' }).then((res) => {
+  // API_BANNER.bannerList({ type: 'indexBanner' }).then((res) => {
+  API_BANNER.bannerList().then((res) => {
     bannerList.value = res.data || [];
   });
 }
