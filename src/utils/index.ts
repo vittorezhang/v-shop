@@ -144,3 +144,31 @@ export function getAPI(code = 'api') {
 export function getAssetsUrl(name: string) {
   return new URL(`/src/assets/${name}`, import.meta.url).href;
 }
+
+
+/** 设备检测 */
+export function isDevice() {
+  if (/miniProgram/i.test(window.navigator.userAgent)) {
+    return 'mini'
+  } else if (/MicroMessenger/.test(window.navigator.userAgent)) {
+    return 'wx';
+  } else if (/AlipayClient/.test(window.navigator.userAgent)) {
+    return 'ali';
+  }
+  return 'other';
+}
+
+/**
+ * @param {String} url
+ * @description 从URL中解析参数
+ */
+export const getUrlParams = (url: string) => {
+  const keyValueArr = url?.split('?')[1]?.split('&');
+  // eslint-disable-next-line
+  let paramObj = {};
+  keyValueArr?.forEach((item) => {
+    const keyValue = item.split('=');
+    paramObj[keyValue[0]] = keyValue[1];
+  });
+  return paramObj;
+};
